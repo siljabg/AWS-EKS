@@ -1,6 +1,6 @@
 # AWS-EKS
 
-Download eks_install script
+Download eks_install script /n
 Edit and enter your aws credentials details
 give execute permissions and run it
 chmod +x eks_install.sh
