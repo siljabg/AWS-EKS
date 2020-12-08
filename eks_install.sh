@@ -37,6 +37,11 @@ chmod +x ./kubectl
 sudo mv ./kubectl /usr/local/bin
 kubectl version --short --client
 
+#install helm
+curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3
+chmod 700 get_helm.sh
+./get_helm.sh
+
 #Configure AWS CLI credentials
 aws configure set aws_access_key_id AKIASIZY5IJBXMAW2OFP
 aws configure set aws_secret_access_key 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
