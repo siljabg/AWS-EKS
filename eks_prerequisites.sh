@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#check if docker is installed
+# if you need docker check if docker is installed
 which docker
 
 if [ $? -eq 0 ]
@@ -16,6 +16,7 @@ else
     echo "Please install docker" >&2
 fi
 
+#OFFICIAL AWS EKS USERGUIDE
 #https://docs.aws.amazon.com/eks/latest/userguide/getting-started-eksctl.html
 
 #install aws cli v2
