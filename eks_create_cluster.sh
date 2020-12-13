@@ -19,6 +19,7 @@ eksctl create cluster \
     --nodes 2 \
     --managed
 
+eksctl create cluster --name dev-cluster --version 1.18 --region us-east-1 --nodegroup-name standrad-workers --node-type t3.micro --node 3 --nodes-min 1 --nodes-max 4 --managed
 #######################
 # Destroy the cluster #
 #######################
