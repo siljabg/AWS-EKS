@@ -11,21 +11,24 @@ export AWS_SECRET_ACCESS_KEY=[...] # Replace [...] with the AWS Secret Access Ke
 export AWS_DEFAULT_REGION=eu-west-1
 
 eksctl create cluster \
-    --name <cluster_name> \
-    --version 1.17 \
+    --name dev-cluster \
+    --version 1.18 \
     --region $AWS_DEFAULT_REGION \
-    --nodegroup-name <name>
+    --nodegroup-name standrad-workers \
     --node-type t3.micro \
-    --nodes 2 \
+    --nodes 3 \
+    --nodes-min 1 \
+    --nodes-max 4 \
     --managed
 
-eksctl create cluster --name dev-cluster --version 1.18 --region us-east-1 --nodegroup-name standrad-workers --node-type t3.micro --node 3 --nodes-min 1 --nodes-max 4 --managed
+aws eks update-kubeconfig --name dev-cluster --region us-east-1
+
 #######################
 # Destroy the cluster #
 #######################
 
 eksctl delete cluster \
-    --name <cluster_name> \
+    --name dev-cluster \
     --region $AWS_DEFAULT_REGION
 
 # Delete unused volumes
