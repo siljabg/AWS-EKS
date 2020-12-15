@@ -60,3 +60,10 @@ aws configure set default.region us-west-2
 #python3.9
 ##check whether pip is installed
 #python -m pip --version
+
+# Install chaostoolkit
+#pip install -U chaostoolkit
+# Discovering Kubernetes Plugin #
+#pip install -U chaostoolkit-kubernetes
+#chaos discover chaostoolkit-kubernetes
+#cat discovery.json
