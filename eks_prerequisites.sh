@@ -45,6 +45,8 @@ aws configure set default.region $AWS_DEFAULT_REGION
 #add :/usr/local/bin in secure_path part in sudoers
 #sudo vim /etc/sudoers
 sudo su -
+yum update -y
+yum groupinstall -y "development tools"
 yum install -y \
   libffi-devel \
   zlib-devel \
@@ -84,6 +86,7 @@ sudo pip3.9 install boto3
 pip3.9 freeze > requirements.txt
 sudo pip3.9 uninstall -y -r requirements.txt
 sudo pip3.9 install -r requirements.txt #put them in another directory
+
 #python virtualenv
 mkdir venvs
 python3.9 -m venv venvs/experiment
