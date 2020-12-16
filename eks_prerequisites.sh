@@ -74,6 +74,26 @@ git config --global user.name "Dragan Siljanovski"
 git config --global user.mail "dragan.siljanovski@gmail.com"
 ##check whether pip is installed
 #python -m pip --version
+pip3.9 list #to check installed package
+#If there is depredation message we can do following
+#mkdir ~/.config/pip
+#vim ~/.config/pip/pip.config
+#[list]
+#format=columns
+sudo pip3.9 install boto3
+pip3.9 freeze > requirements.txt
+sudo pip3.9 uninstall -y -r requirements.txt
+sudo pip3.9 install -r requirements.txt #put them in another directory
+#python virtualenv
+mkdir venvs
+python3.9 -m venv venvs/experiment
+ls venvs/experiment/
+source venvs/experiment/bin/activate
+which python
+python --version
+pip list
+deactivate 
+
 
 
 # Install chaostoolkit
