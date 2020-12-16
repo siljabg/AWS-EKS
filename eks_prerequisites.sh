@@ -42,7 +42,7 @@ aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY
 aws configure set default.region $AWS_DEFAULT_REGION
 
 ##Python 3 for centos
-#add :/usr/local/bin in secure_path part in sudoers
+#add / in secure_path part in sudoers
 #sudo vim /etc/sudoers
 sudo su -
 yum update -y
@@ -77,11 +77,6 @@ git config --global user.mail "dragan.siljanovski@gmail.com"
 ##check whether pip is installed
 #python -m pip --version
 pip3.9 list #to check installed package
-#If there is depredation message we can do following
-#mkdir ~/.config/pip
-#vim ~/.config/pip/pip.config
-#[list]
-#format=columns
 sudo pip3.9 install boto3
 pip3.9 freeze > requirements.txt
 sudo pip3.9 uninstall -y -r requirements.txt
