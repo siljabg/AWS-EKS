@@ -1,5 +1,9 @@
 #!/bin/bash
 
+curl https://raw.githubusercontent.com/siljabg/content-python-for-sys-admins/master/helpers/bashrc -o ~/.bashrc
+curl https://raw.githubusercontent.com/siljabg/content-python-for-sys-admins/master/helpers/vimrc -o ~/.vimrc
+exec $SHELL  #to reload bash
+
 export AWS_ACCESS_KEY_ID=AKIA3ZHOYC6ELX2ZTKTP                         # Replace [...] with the AWS Access Key ID
 export AWS_SECRET_ACCESS_KEY=evNSRDg0TFbGtNukG8d/fpGBey0Tk5jhZsmHBxP3 # Replace [...] with the AWS Secret Access Key
 export AWS_DEFAULT_REGION=us-east-1
@@ -38,20 +42,39 @@ aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY
 aws configure set default.region $AWS_DEFAULT_REGION
 
 ##Python 3 for centos
-#yum install -y python3
-# or to install latest version
-#yum install gcc openssl-devel bzip2-devel libffi-devel -y
-#curl -O https://www.python.org/ftp/python/3.9.1/Python-3.9.1.tgz
-#tar -xzf Python-3.9.1.tgz
-#cd Python-3.9.1/
-#./configure --enable-optimizations
-#make altinstall
-#python3.9
+#add :/usr/local/bin in secure_path part in sudoers
+#sudo vim /etc/sudoers
+sudo su -
+yum install -y \
+  libffi-devel \
+  zlib-devel \
+  bzip2-devel \
+  openssl-devel \
+  ncurses-devel \
+  sqlite-devel \
+  readline-devel \
+  tk-devel \
+  gdbm-devel \
+  db4-devel \
+  libpcap-devel \
+  xz-devel \
+  expat-devel \
+  gcc \
+  git
+ 
+curl -O https://www.python.org/ftp/python/3.9.1/Python-3.9.1.tgz
+tar -xzf Python-3.9.1.tgz
+cd Python-3.9.1/
+./configure --enable-optimizations
+make altinstall
+exit
+python3.9
+sudo pip3.9 install --upgrade pip
+git config --global user.name "Dragan Siljanovski"
+git config --global user.mail "dragan.siljanovski@gmail.com"
 ##check whether pip is installed
 #python -m pip --version
-#to install pip
-#curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-#python get-pip.py
+
 
 # Install chaostoolkit
 #pip install -U chaostoolkit
