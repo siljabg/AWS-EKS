@@ -7,7 +7,7 @@ exec $SHELL  #to reload bash
 export AWS_ACCESS_KEY_ID=AKIA3ZHOYC6ELX2ZTKTP                         # Replace [...] with the AWS Access Key ID
 export AWS_SECRET_ACCESS_KEY=evNSRDg0TFbGtNukG8d/fpGBey0Tk5jhZsmHBxP3 # Replace [...] with the AWS Secret Access Key
 export AWS_DEFAULT_REGION=us-east-1
-export KUBECTL_VERSION=1.18.9
+export KUBECTL_VERSION=1.20.4
 
 ##OFFICIAL AWS EKS USERGUIDE
 ##https://docs.aws.amazon.com/eks/latest/userguide/getting-started-eksctl.html
@@ -24,7 +24,7 @@ sudo mv /tmp/eksctl /usr/local/bin
 
 ##install kubectl
 ##kubectl version can be 2 version below master version
-curl -o kubectl https://amazon-eks.s3.us-west-2.amazonaws.com/$KUBECTL_VERSION/2020-11-02/bin/linux/amd64/kubectl
+curl -o kubectl https://amazon-eks.s3.us-west-2.amazonaws.com/$KUBECTL_VERSION/2021-04-12/bin/linux/amd64/kubectl
 curl -o kubectl.sha256 https://amazon-eks.s3.us-west-2.amazonaws.com/$KUBECTL_VERSION/2020-11-02/bin/linux/amd64/kubectl.sha256
 openssl sha1 -sha256 kubectl
 chmod +x ./kubectl
